@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:backgroundTint="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/topPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_darkgrey">
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/title"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/btn_newgame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_margin="8dp"
+            android:text="NEW GAME"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"
+            android:padding="16dp"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="8dp"
+            android:backgroundTint="@color/orange"
+            android:onClick="Reset"/>
+
+        <TextView
+            android:id="@+id/txt_timerem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:text="Time Elapsed"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif"
+            />
+
+        <Chronometer
+            android:id="@+id/time_counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_timerem"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="90dp"
+            android:drawableStart="@drawable/ic_pause"
+            android:drawablePadding="8dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+    <ino.project.sudoku.SudokuBoard
+        android:id="@+id/SudokuBoard"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        custom:boardColor="@color/orange"
+        custom:cellsFillColor="@color/bg_darkgrey"
+        custom:cellsHighlightColor="@color/colorPrimaryDark"
+        custom:letterColor="@color/white"
+        custom:letterColorSolve="@color/green"
+        custom:letterColorError="@color/red"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </ino.project.sudoku.SudokuBoard>
+
+    <LinearLayout
+        android:id="@+id/numbers"
+        android:layout_below="@id/SudokuBoard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/num1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="1"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"
+            />
+
+        <TextView
+            android:id="@+id/num2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="2"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+        <TextView
+            android:id="@+id/num3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="3"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+        <TextView
+            android:id="@+id/num4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="4"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"
+            />
+
+        <TextView
+            android:id="@+id/num5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="5"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+        <TextView
+            android:id="@+id/num6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="6"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+        <TextView
+            android:id="@+id/num7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="7"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+        <TextView
+            android:id="@+id/num8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="8"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+        <TextView
+            android:id="@+id/num9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="9"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/bg_darkgrey"/>
+
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/solveBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/green"
+        android:onClick="Solve"
+        android:text="SOLVE ME!"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
