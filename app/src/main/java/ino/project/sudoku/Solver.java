@@ -105,11 +105,15 @@ public class Solver {
     }
 
     public void setNumberPos(int num){
+
         if(this.selected_row != -1 && this.selected_coloumn != -1){
             if(this.board[this.selected_row-1][this.selected_coloumn-1] == num){
                 this.board[this.selected_row-1][this.selected_coloumn-1] = 0;
             }else {
                 this.board[this.selected_row-1][this.selected_coloumn-1] = num;
+                if (!check(this.selected_row-1, this.selected_coloumn-1)){
+                    this.board[this.selected_row-1][this.selected_coloumn-1] = -num;
+                }
             }
         }
     }

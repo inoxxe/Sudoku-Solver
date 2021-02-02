@@ -122,9 +122,16 @@ public class SudokuBoard extends View {
 
         for(int r=0 ; r<9 ; r++){
             for(int c=0 ; c<9 ; c++){
-                if(solver.check(r,c)){
                     if(solver.getBoard()[r][c] !=0){
-                        String text = Integer.toString(solver.getBoard()[r][c]);
+                        String text;
+                        if (solver.getBoard()[r][c] < 0){
+                            text = Integer.toString(solver.getBoard()[r][c]*-1);
+                            letterPaint.setColor(letterColorError);
+                        }
+                        else{
+                            letterPaint.setColor(letterColor);
+                            text = Integer.toString(solver.getBoard()[r][c]);
+                        }
                         float width, height;
 
                         letterPaint.getTextBounds(text,0,text.length(),letterPaintBounds);
@@ -135,10 +142,11 @@ public class SudokuBoard extends View {
                                 (r*cellSize+cellSize)- ((cellSize-height)/2),letterPaint);
 
                     }
-                }
 
             }
         }
+
+
 
         letterPaint.setColor(letterColorSolve);
 
